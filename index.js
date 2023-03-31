@@ -20,7 +20,7 @@ fs.readFile("preguntas.json", (err, data) => {
 let players = [];
 
 io.on("connection", (socket) => {
-  console.log("Un cliente se ha conectado.");
+  console.log(`Jugador anónimo ${socket.id} conectado.`);
 
   socket.on("join", ({ nickname }, callback) => {
     console.log(`El jugador ${nickname} se ha unido.`);
@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("answer", (data) => {
-    console.log(`El jugador ${data.nickname} ha respondido: ${data.answer}`);
+    console.log(`${data.nickname} ha respondido: ${data.answer}.`);
     let player = players.find((p) => p.name === data.nickname);
     if (player) {
       let question = preguntas[data.question];
@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log(`El jugador ${socket.id} se ha desconectado.`);
+    console.log(`El jugador anónimo ${socket.id} se ha desconectado.`);
     players = players.filter((p) => p.id !== socket.id);
     io.emit("players", players);
   });
@@ -78,7 +78,7 @@ function startGame() {
 }
 
 function endGame() {
-  console.log("El juego ha terminado");
+  console.log("Juego finalizado.");
   players.sort((a, b) => b.score - a.score);
   let winners = players.filter((p) => p.score === players[0].score);
   let winnerNames = winners.map((w) => w.name);

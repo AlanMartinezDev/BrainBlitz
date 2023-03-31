@@ -2,65 +2,65 @@
 <html>
   <head>
     <title>BrainBlitz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      #timer {
+        background-color: black;
+        color: white;
+        font-size: 3rem;
+        border-radius: 10px;
+        padding: 10px;
         text-align: center;
-        background-color: #f2f2f2;
-      }
-      h2 {
-        color: #d32f2f;
-      }
-      input,
-      button {
-        font-size: 16px;
-        padding: 8px;
-        margin: 5px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      input {
-        width: 200px;
-      }
-      button {
-        background-color: #d32f2f;
-        color: #fff;
-      }
-      button:hover {
-        background-color: #b71c1c;
-      }
-      #game {
-        margin-top: 30px;
-      }
-      #answers {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-      }
-      #scoreboard {
-        margin-top: 20px;
-        color: #d32f2f;
-        font-weight: bold;
-      }
-      #restartButton {
-        margin-top: 20px;
       }
     </style>
   </head>
-  <body>
-    Entra el teu nom
-    <input id="nicknameInput" type="text" />
-    <button id="sendButton">Enviar</button>
-    <div id="game" style="display: none">
-      <h2 id="question"></h2>
-      <div id="answers"></div>
-      <div id="scoreboard">Tus puntos: <span id="points">0</span></div>
-      <button id="restartButton" style="display: none">Reiniciar juego</button>
+  <body class="container mt-3 bg-light">
+    <h1 class="text-center mb-3">BrainBlitz</h1>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div id="game" style="display: none;">
+          <h2 id="question" class="text-danger mb-4"></h2>
+          <div id="answers"></div>
+          <div id="scoreboard" class="mt-3 text-danger">Tus puntos: <span id="points">0</span></div>
+          <button id="restartButton" class="btn btn-danger mt-3" style="display: none;">Reiniciar juego</button>
+        </div>
+        <div id="startContainer">
+          <h1 class="text-danger mb-4" id="nicknameText">Nombre para jugar:</h1>
+          <div class="input-group mb-3">
+            <input id="nicknameInput" type="text" class="form-control" placeholder="Snowman, capybara..." />
+            <button id="sendButton" class="btn btn-danger">Enviar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div id="tiempoRestante" style="display: none;">
+          <h2 class="text-danger mb-4">Tiempo restante:</h2>
+          <h4 id="timer">Cargando...</h4>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div id="leaderboardTableContainer" style="display: none;">
+          <h2 class="text-danger mb-4" id="leaderboardTableText">Tabla de clasificación</h2>
+          <div class="table-responsive">
+            <table id="leaderboardTable" class="table table-striped">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Puntuación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- los datos se actualizarán en tiempo real usando JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"></script>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
   </body>
 </html>
