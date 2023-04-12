@@ -24,19 +24,18 @@
     <h1 class="text-center mb-3">BrainBlitz</h1>
     <div class="row">
       <div class="col-12 col-md-4">
+        <div id="tiempoRestante" style="display: none">
+          <h2 class="text-danger mb-4">Tiempo restante:</h2>
+          <h4 id="timer">Cargando...</h4>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
         <div id="game" style="display: none">
           <h2 id="question" class="text-danger mb-4"></h2>
           <div id="answers"></div>
           <div id="scoreboard" class="mt-3 text-danger">
             Tus puntos: <span id="points">0</span>
           </div>
-          <button
-            id="restartButton"
-            class="btn btn-danger mt-3"
-            style="display: none"
-          >
-            Volver a jugar
-          </button>
         </div>
         <div id="startContainer">
           <h1 class="text-danger mb-4" id="nicknameText">Nombre para jugar:</h1>
@@ -49,12 +48,6 @@
             />
             <button id="sendButton" class="btn btn-danger">Enviar</button>
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div id="tiempoRestante" style="display: none">
-          <h2 class="text-danger mb-4">Tiempo restante:</h2>
-          <h4 id="timer">Cargando...</h4>
         </div>
       </div>
       <div class="col-12 col-md-4">

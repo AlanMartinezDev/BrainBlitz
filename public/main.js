@@ -5,7 +5,6 @@ const nicknameInput = document.getElementById("nicknameInput");
 const game = document.getElementById("game");
 const questionElement = document.getElementById("question");
 const answersElement = document.getElementById("answers");
-const restartButton = document.getElementById("restartButton");
 
 sendButton.addEventListener("click", () => {
   const nickname = nicknameInput.value;
@@ -105,13 +104,7 @@ socket.on("winners", (winners) => {
     "Juego finalizado. Espero que hayáis disfrutado del juego y aprendido algo nuevo en el camino.";
   const winnerText = winners.length === 1 ? "Ganador: " : "Ganadores: ";
   answersElement.innerHTML = winnerText + winners.join(", ");
-  restartButton.style.display = "block";
   tiempoRestante.style.display = "none";
-});
-
-restartButton.addEventListener("click", () => {
-  socket.emit("restart");
-  restartButton.style.display = "none";
 });
 
 function disableAnswerButtons() {

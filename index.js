@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("answer", (data) => {
-    console.log(`${data.nickname} ha respondido: ${data.answer}.`);
+    //console.log(`${data.nickname} ha respondido: ${data.answer}.`);
     let player = players.find((p) => p.name === data.nickname);
     if (player) {
       let question = preguntas[data.question];
@@ -55,16 +55,11 @@ io.on("connection", (socket) => {
     players = players.filter((p) => p.id !== socket.id);
     io.emit("players", players);
   });
-
-  socket.on("restart", () => {
-    if (players.length > 0) {
-      startGame();
-    }
-  });
 });
 
 function startGame() {
   let questionIndex = 0;
+  let remainingTime = 0;
   let intervalId = setInterval(() => {
     if (questionIndex >= preguntas.length) {
       clearInterval(intervalId);
@@ -72,8 +67,17 @@ function startGame() {
       return;
     }
     let question = preguntas[questionIndex];
-    io.emit("question", { index: questionIndex, text: question.text, answers: question.answers, time: question.time });
+    remainingTime = question.time;
+    io.emit("question", { index: questionIndex, text: question.text, answers: question.answers, time: remainingTime });
     questionIndex++;
+    let questionTimerId = setInterval(() => {
+      if (remainingTime <= 0) {
+        clearInterval(questionTimerId);
+        io.emit("questionEnd", {});
+        return;
+      }
+      remainingTime--;
+    }, 1000);
   }, 11000);
 }
 
