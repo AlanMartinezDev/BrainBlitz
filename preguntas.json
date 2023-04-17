@@ -1,92 +1,90 @@
 [
   {
-    "text": "¿Cuál es el río más largo del mundo?",
+    "text": "¿Qué lenguaje de programación se utiliza principalmente para crear aplicaciones web dinámicas?",
     "answers": [
-    { "text": "Nilo", "correct": false },
-    { "text": "Amazonas", "correct": true },
-    { "text": "Yangtze", "correct": false },
-    { "text": "Misisipi", "correct": false }
+      {
+        "text": "Java",
+        "correct": false
+      },
+      {
+        "text": "C#",
+        "correct": false
+      },
+      {
+        "text": "Python",
+        "correct": false
+      },
+      {
+        "text": "JavaScript",
+        "correct": true
+      }
     ],
-    "time": 10
+    "time": 5
   },
   {
-    "text": "¿Cuál es el planeta más grande del sistema solar?",
+    "text": "¿Qué es Laravel?",
     "answers": [
-    { "text": "Tierra", "correct": false },
-    { "text": "Júpiter", "correct": true },
-    { "text": "Marte", "correct": false },
-    { "text": "Saturno", "correct": false }
+      {
+        "text": "Un lenguaje",
+        "correct": false
+      },
+      {
+        "text": "Un sistema de gestión de bases de datos",
+        "correct": false
+      },
+      {
+        "text": "Un framework de PHP",
+        "correct": true
+      },
+      {
+        "text": "Una biblioteca de JavaScript",
+        "correct": false
+      }
     ],
-    "time": 15
+    "time": 5
   },
   {
-    "text": "¿En qué país se encuentra la Torre Eiffel?",
+    "text": "¿Qué es Node.js?",
     "answers": [
-    { "text": "Italia", "correct": false },
-    { "text": "Alemania", "correct": false },
-    { "text": "Francia", "correct": true },
-    { "text": "Reino Unido", "correct": false }
+      {
+        "text": "Un framework de JavaScript",
+        "correct": false
+      },
+      {
+        "text": "Un lenguaje",
+        "correct": false
+      },
+      {
+        "text": "Una biblioteca de JavaScript",
+        "correct": false
+      },
+      {
+        "text": "Un entorno de ejecución de JavaScript en el servidor",
+        "correct": true
+      }
     ],
-    "time": 10
+    "time": 5
   },
   {
-    "text": "¿Quién pintó 'La última cena'?",
+    "text": "¿Qué es React?",
     "answers": [
-    { "text": "Leonardo da Vinci", "correct": true },
-    { "text": "Vincent van Gogh", "correct": false },
-    { "text": "Pablo Picasso", "correct": false },
-    { "text": "Claude Monet", "correct": false }
+      {
+        "text": "Un lenguaje",
+        "correct": false
+      },
+      {
+        "text": "Un sistema de gestión de bases de datos",
+        "correct": false
+      },
+      {
+        "text": "Una biblioteca de JavaScript para construir interfaces de usuario",
+        "correct": true
+      },
+      {
+        "text": "Un framework de PHP",
+        "correct": false
+      }
     ],
-    "time": 20
-  },
-  {
-    "text": "¿Cuál es el país más poblado del mundo?",
-    "answers": [
-    { "text": "India", "correct": false },
-    { "text": "Estados Unidos", "correct": false },
-    { "text": "China", "correct": true },
-    { "text": "Rusia", "correct": false }
-    ],
-    "time": 15
-  },
-  {
-    "text": "¿Quién es el fundador de Apple?",
-    "answers": [
-      { "text": "Steve Jobs", "correct": true },
-      { "text": "Bill Gates", "correct": false },
-      { "text": "Mark Zuckerberg", "correct": false },
-      { "text": "Jeff Bezos", "correct": false }
-    ],
-    "time": 15
-  },
-  {
-    "text": "¿Cuál es la molécula responsable de la transmisión de información genética?",
-    "answers": [
-      { "text": "Proteína", "correct": false },
-      { "text": "Lípido", "correct": false },
-      { "text": "Ácido ribonucleico (ARN)", "correct": false },
-      { "text": "Ácido desoxirribonucleico (ADN)", "correct": true }
-    ],
-    "time": 30
-  },
-  {
-    "text": "¿Quién es el autor de 'El Quijote'?",
-    "answers": [
-      { "text": "Miguel de Cervantes", "correct": true },
-      { "text": "Garcilaso de la Vega", "correct": false },
-      { "text": "Lope de Vega", "correct": false },
-      { "text": "Federico García Lorca", "correct": false }
-    ],
-    "time": 20
-  },
-  {
-    "text": "¿En qué año se descubrió América?",
-    "answers": [
-      { "text": "1492", "correct": true },
-      { "text": "1488", "correct": false },
-      { "text": "1500", "correct": false },
-      { "text": "1520", "correct": false }
-    ],
-    "time": 15
+    "time": 5
   }
-  ]
+]

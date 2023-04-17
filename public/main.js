@@ -5,7 +5,6 @@ const nicknameInput = document.getElementById("nicknameInput");
 const game = document.getElementById("game");
 const questionElement = document.getElementById("question");
 const answersElement = document.getElementById("answers");
-const restartButton = document.getElementById("restartButton");
 
 sendButton.addEventListener("click", () => {
   const nickname = nicknameInput.value;
@@ -46,13 +45,18 @@ function displayQuestion(question) {
 
   question.answers.forEach((answer, index) => {
     const buttonDiv = document.createElement("div");
-    buttonDiv.className = "col-6 d-flex justify-content-center align-items-center";
+    buttonDiv.className =
+      "col-6 d-flex justify-content-center align-items-center";
 
     const button = document.createElement("button");
     button.textContent = answer.text;
     button.className = "btn btn-danger btn-lg my-2 w-100";
     button.onclick = () => {
-      socket.emit("answer", { nickname: nicknameInput.value, question: question.index, answer: index });
+      socket.emit("answer", {
+        nickname: nicknameInput.value,
+        question: question.index,
+        answer: index,
+      });
       clearInterval(intervalId);
       disableAnswerButtons();
     };
@@ -96,16 +100,11 @@ socket.on("players", (players) => {
 });
 
 socket.on("winners", (winners) => {
-  questionElement.textContent = "Juego finalizado. Espero que hayáis disfrutado del juego y aprendido algo nuevo en el camino.";
+  questionElement.textContent =
+    "Juego finalizado. Espero que hayáis disfrutado del juego y aprendido algo nuevo en el camino.";
   const winnerText = winners.length === 1 ? "Ganador: " : "Ganadores: ";
   answersElement.innerHTML = winnerText + winners.join(", ");
-  restartButton.style.display = "block";
   tiempoRestante.style.display = "none";
-});
-
-restartButton.addEventListener("click", () => {
-  socket.emit("restart");
-  restartButton.style.display = "none";
 });
 
 function disableAnswerButtons() {
