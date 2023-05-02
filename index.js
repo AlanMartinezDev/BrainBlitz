@@ -25,7 +25,10 @@ io.on("connection", (socket) => {
     console.log(`El jugador ${nickname} se ha unido.`);
 
     if (players.has(nickname)) {
-      callback({ status: "error", message: "El nombre de usuario ya está en uso." });
+      callback({
+        status: "error",
+        message: "El nombre de usuario ya está en uso.",
+      });
     } else {
       players.set(nickname, { id: socket.id, name: nickname, score: 0 });
       io.emit("players", Array.from(players.values()));
@@ -70,7 +73,12 @@ function startGame() {
     }
     const questionObj = preguntas[questionIndex];
     remainingTime = questionObj.time;
-    io.emit("question", { index: questionIndex, text: questionObj.text, answers: questionObj.answers, time: remainingTime });
+    io.emit("question", {
+      index: questionIndex,
+      text: questionObj.text,
+      answers: questionObj.answers,
+      time: remainingTime,
+    });
     questionIndex++;
     let questionTimerId = setInterval(() => {
       if (remainingTime <= 0) {
@@ -85,7 +93,9 @@ function startGame() {
 
 function endGame() {
   console.log("Juego finalizado.");
-  const sortedPlayers = Array.from(players.values()).sort((a, b) => b.score - a.score);
+  const sortedPlayers = Array.from(players.values()).sort(
+    (a, b) => b.score - a.score
+  );
   const winners = [];
   let maxScore = sortedPlayers[0].score;
   for (let i = 0; i < sortedPlayers.length; i++) {

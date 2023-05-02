@@ -5,7 +5,9 @@ const nicknameInput = document.querySelector("#nicknameInput");
 const game = document.querySelector("#game");
 const questionElement = document.querySelector("#question");
 const answersElement = document.querySelector("#answers");
-const leaderboardTableContainer = document.querySelector("#leaderboardTableContainer");
+const leaderboardTableContainer = document.querySelector(
+  "#leaderboardTableContainer"
+);
 const tiempoRestante = document.querySelector("#tiempoRestante");
 const startContainer = document.querySelector("#startContainer");
 const timerElement = document.querySelector("#timer");
@@ -96,10 +98,12 @@ socket.on("players", (players) => {
   for (let i = 0; i < players.length; i++) {
     const player = players[i];
     const row = document.createElement("tr");
-    row.innerHTML = `<th scope="row">${i + 1}</th><td>${player.name}</td><td>${player.score}</td>`;
+    row.innerHTML = `<th scope="row">${i + 1}</th><td>${player.name}</td><td>${
+      player.score
+    }</td>`;
     leaderboardTableBody.appendChild(row);
   }
-    
+
   const player = players.find((p) => p.name === nicknameInput.value);
   if (player) {
     pointsElement.textContent = player.score;
@@ -109,7 +113,7 @@ socket.on("players", (players) => {
 
   socket.on("winners", (winners) => {
     questionElement.textContent =
-    "Juego finalizado. Espero que hayáis disfrutado del juego y aprendido algo nuevo en el camino.";
+      "Juego finalizado. Espero que hayáis disfrutado del juego y aprendido algo nuevo en el camino.";
     const winnerText = winners.length === 1 ? "Ganador: " : "Ganadores: ";
     answersElement.textContent = winnerText + winners.join(", ");
     tiempoRestante.style.display = "none";

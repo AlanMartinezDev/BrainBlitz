@@ -86,5 +86,101 @@
       }
     ],
     "time": 5
+  },
+  {
+    "text": "¿Qué es una API?",
+    "answers": [
+      {
+        "text": "Un lenguaje de programación",
+        "correct": false
+      },
+      {
+        "text": "Una herramienta de diseño gráfico",
+        "correct": false
+      },
+      {
+        "text": "Un conjunto de protocolos y estándares que permiten la comunicación entre aplicaciones",
+        "correct": true
+      },
+      {
+        "text": "Un software de análisis de datos",
+        "correct": false
+      }
+    ],
+    "time": 5
+  },
+  {
+    "text": "¿Cuál es la diferencia entre Git y GitHub?",
+    "answers": [
+      {
+        "text": "Git es un sistema de control de versiones y GitHub es un servicio web para alojar proyectos que utilizan Git",
+        "correct": true
+      },
+      {
+        "text": "Git y GitHub son lo mismo",
+        "correct": false
+      }
+    ],
+    "time": 5
+  },
+  {
+    "text": "¿Qué es una base de datos relacional?",
+    "answers": [
+      {
+        "text": "Una base de datos que utiliza tablas para almacenar la información y establece relaciones entre ellas",
+        "correct": true
+      },
+      {
+        "text": "Una base de datos que utiliza una estructura de árbol para almacenar la información",
+        "correct": false
+      }
+    ],
+    "time": 5
+  },
+  {
+    "text": "¿Qué es el responsive design?",
+    "answers": [
+      {
+        "text": "Un diseño web que solo se adapta a pantallas pequeñas",
+        "correct": false
+      },
+      {
+        "text": "Un diseño web que se adapta a diferentes tamaños y resoluciones de pantalla",
+        "correct": true
+      },
+      {
+        "text": "Un diseño web que no se adapta a dispositivos móviles",
+        "correct": false
+      }
+    ],
+    "time": 5
+  },
+  {
+    "text": "¿Qué es el patrón MVC en programación?",
+    "answers": [
+      {
+        "text": "Un patrón de diseño que separa la lógica de presentación, la lógica de negocio y la gestión de datos en diferentes componentes",
+        "correct": true
+      },
+      {
+        "text": "Un patrón de diseño que utiliza solo funciones para realizar todas las operaciones de un programa",
+        "correct": false
+      }
+    ],
+    "time": 5
+  },
+  {
+    "text": "¿Qué es la programación orientada a objetos?",
+    "answers": [
+      {
+        "text": "Un paradigma de programación que se centra en la creación de objetos que tienen atributos y métodos",
+        "correct": true
+      },
+      {
+        "text": "Un paradigma de programación que se centra en la utilización de estructuras de datos complejas",
+        "correct": false
+      }
+    ],
+    "time": 5
   }
 ]
